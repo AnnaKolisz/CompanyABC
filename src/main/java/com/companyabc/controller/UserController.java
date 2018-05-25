@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.companyabc.entity.User;
+import com.companyabc.repository.PositionRepository;
 import com.companyabc.repository.UserRepository;
 
 @Controller
@@ -17,10 +18,14 @@ public class UserController {
 	@Autowired
 	UserRepository userRepo;
 	
+	@Autowired
+	PositionRepository positionRepo;
+	
 	@RequestMapping("/addEmployee")
 	public String addNewUser(Model model) {
 		model.addAttribute("user", new User());
-		return "addUser";
+		model.addAttribute("positions", positionRepo.findAll());
+		return "UserView/addUser";
 		
 	}
 	

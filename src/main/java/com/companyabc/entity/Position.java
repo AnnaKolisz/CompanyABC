@@ -19,5 +19,14 @@ public class Position {
 	private String name;
 	@OneToMany
 	private List<User> users;
+	
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	
 
 }

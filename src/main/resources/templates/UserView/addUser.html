@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}"></link>
+<title>CompanyABC</title>
+</head>
+<body>
+
+	<nav id="navigator">
+		A B C<span id="logo">ompany</span>
+	</nav>
+
+	<div class="leftmenu">
+		<a class="menubuttons" th:href="@{/companyabc/addEmployee}">Dodaj
+			nowego użytkownika</a> <a class="menubuttons"
+			th:href="@{/companyabc/employees}">Wyszukaj pracownika</a> <a
+			class="menubuttons" th:href="@{/companyabc/positions}">Pokaż
+			obecne stanowiska</a> <a class="menubuttons"
+			th:href="@{/companyabc/deleteEmployee}">Usuń użytkownika</a>
+	</div>
+	<div class="cointeiner">
+
+		<div class="formAdd">
+			<span> Dodaj nowego użytkownika</span>
+			<form method="post" th:action="@{addUser}" th:object="${user}">
+				<label>Imię<input type="text" name="name" /></label> <label>Nazwisko<input
+					type="text" name="surname" /></label> 
+					<label> Stanowisko
+					<select th:field="*{position}">
+					<option
+						th:each="position : ${positions}" 
+						th:value="${position.id}"
+						th:text="${position.name}"></option></select></label>
+					<label>Email<input type="email" name="email"/></label>	
+					<input id="send" type="submit" value="Dodaj pracownika"></input>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
