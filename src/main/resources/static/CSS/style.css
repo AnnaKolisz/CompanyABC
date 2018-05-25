@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body{
+	margin: 1px;
+}
+
+#cointeiner{
+	position:: absolute;
+	top: 66px;
+	
+}
+
+#leftmenu{
+	position: absolute;
+	
+	width: 350px;
+	background-color: #75D1BC;
+	height:1000px;
+	
+	
+}
+.menubuttons{
+	color: 	#696969;
+	margin:30px;
+	display: block;
+	position: relative;
+	border: 1px solid #FEEFC6;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 12px;
+	background-color: white;
+	padding-left: 10px;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size: 20px;
+	width:275px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#navigator, nav{
+	position: relative;
+	color: #FEEFC6;
+	background-color: #37A48B;
+	padding: 15px; 
+	font-size: 28px;
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	height: 36px;
+	
+}
