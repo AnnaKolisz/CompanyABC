@@ -7,15 +7,21 @@
 </head>
 <body>
 
-	<nav id="navigator">ABCompany</nav>
-	
-		<div id="leftmenu">
-			<button class="menubuttons">Dodaj nowego użytkownika</button>
-			<button class="menubuttons">Wyszukaj pracownika</button>
-			<button class="menubuttons">Pokaż obecne stanowiska</button>
-			<button class="menubuttons">Usuń użytkownika</button>
-		</div>
-		<div></div>
-	
+	<nav>
+		A B C<span id="logo">ompany</span>
+	</nav>
+
+	<div class="leftmenu">
+		<a class="menubuttons" th:href="@{/companyabc/addEmployee}">Dodaj
+			nowego użytkownika</a> <a class="menubuttons"
+			th:href="@{/companyabc/employees}">Wyszukaj pracownika</a> <a
+			class="menubuttons" th:href="@{/companyabc/positions}">Pokaż
+			obecne stanowiska</a> <a class="menubuttons"
+			th:href="@{/companyabc/deleteEmployee}">Usuń użytkownika</a>
+	</div>
+	<div class="cointeiner">
+		<span id="welcome">Witamy !!!</span>
+	</div>
+
 </body>
 </html>
