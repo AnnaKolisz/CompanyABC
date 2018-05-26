@@ -36,6 +36,11 @@ public class UserController {
 		return positionRepo.findAll();
 	}
 	
+	@ModelAttribute("employees")
+	public List<User> findAllUsers() {
+		return userRepo.findAllByOrderByNameAsc();
+	}
+	
 	@GetMapping("/addEmployee")
 	public String addNewUser(Model model) {
 		model.addAttribute("user", new User());
@@ -66,6 +71,11 @@ public class UserController {
 		}
 		userRepo.save(user);
 		return "redirect:addNextEmployee";		
+	}
+	
+	@GetMapping("listOfEmployees")
+	public String showListOfEmployees() {
+		return "UserView/listOfUsers";
 	}
 
 }

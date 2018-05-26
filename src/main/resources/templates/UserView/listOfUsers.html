@@ -2,13 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<security:intercept-url pattern="/resources/**" access="permitAll" />
 <link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}"></link>
 <title>CompanyABC</title>
 </head>
 <body>
 
-	<nav>
+	<nav id="navigator">
 		A B C<span id="logo">ompany</span>
 	</nav>
 
@@ -21,7 +20,9 @@
 			th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
 	</div>
 	<div class="cointeiner">
-		<span id="welcome">Witamy !!!</span>
+	<div class="formTittle">Lista pracowników</div>
+		
+		
 	</div>
 
 </body>
