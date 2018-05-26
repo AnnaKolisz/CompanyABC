@@ -15,12 +15,26 @@
 		<a class="menubuttons" th:href="@{/companyabc/addEmployee}">Dodaj
 			nowego pracownika</a> <a class="menubuttons"
 			th:href="@{/companyabc/employees}">Wyszukaj pracownika</a> <a
-			class="menubuttons" th:href="@{/companyabc/positions}">Statystyki stanowisk</a> <a class="menubuttons"
+			class="menubuttons" th:href="@{/companyabc/positions}">Statystyki
+			stanowisk</a> <a class="menubuttons"
 			th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
 	</div>
 	<div class="cointeiner">
-		<span id="welcome">Witamy !!!</span>
-	</div>
+		<div>Liczba stanowisk</div>
+		<span th:text="${numberOfPosition}"></span>
+		<div class="formAdd">
+		<table>
+			<thead></thead>
+			<tbody>
+				<tr>
+					<td th:text="${numbers}"></td>
 
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+	</div>
+	
 </body>
 </html>

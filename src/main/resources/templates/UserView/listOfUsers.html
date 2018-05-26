@@ -15,8 +15,7 @@
 		<a class="menubuttons" th:href="@{/companyabc/addEmployee}">Dodaj
 			nowego pracownika</a> <a class="menubuttons"
 			th:href="@{/companyabc/employees}">Wyszukaj pracownika</a> <a
-			class="menubuttons" th:href="@{/companyabc/positions}">Pokaż
-			obecne stanowiska</a> <a class="menubuttons"
+			class="menubuttons" th:href="@{/companyabc/positions}">Statystyki stanowisk</a> <a class="menubuttons"
 			th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
 	</div>
 	<div class="cointeiner">
@@ -41,7 +40,7 @@
 						<td th:text="${employee.position.name}"></td>
 						<td th:text="${employee.email}"></td>
 						<td><a th:href="@{editEmployee/{id}(id=${employee.id})}">Edytuj</a></td>
-						<td><a th:href="@{deleteEmployee/{id}(id=${employee.id})}">Usuń</a></td>
+						<td><a th:href="@{deleteEmployee/{id}(id=${employee.id})}" onclick="return confirm('Proszę o potwierdzenie usunięcia pracownika. Akcja nieodwracalna');">Usuń</a></td>
 
 					</tr>
 				</tbody>
