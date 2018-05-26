@@ -35,6 +35,14 @@ body{
 	-webkit-border-radius: 12px;
 }
 
+.formErrors{
+	padding: 5px;
+	margin-left:20px;
+	color: Tomato;
+	font-size: 24px;
+}
+
+
 .formInput{
 	margin-left:20px;
 	width: 600px;

@@ -22,8 +22,10 @@
 	<div class="cointeiner">
 
 		<div class="formAdd">
-			<div class="formTittle">Dodaj nowego użytkownika</div>
-			<form method="post" th:action="@{addEmployee}" th:object="${user}">
+			
+			<div class="formTittle">Pomyślnie dodano użytkownika<br>Dodaj następnego nowego użytkownika</div>
+			
+			<form method="post" th:action="@{addNextEmployee}" th:object="${user}">
 				<div class="form">
 					<label class="formLabel">Imię</label><input type="text" th:field="*{name}"
 						class="formInput" /><span class ="formErrors" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>

@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 
 @Entity
 public class User {
@@ -12,10 +15,13 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@NotEmpty(message="Proszę uzupełnienie pola")
 	private String name;
+	@NotEmpty(message="Proszę uzupełnienie pola")
 	private String surname;
 	@ManyToOne
 	private Position position;
+	@NotEmpty(message="Proszę uzupełnienie pola")
 	private String email;
 	public String getName() {
 		return name;
