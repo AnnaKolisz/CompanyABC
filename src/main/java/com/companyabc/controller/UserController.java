@@ -1,14 +1,15 @@
 package com.companyabc.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.companyabc.entity.Position;
@@ -38,7 +39,7 @@ public class UserController {
 	
 	@ModelAttribute("employees")
 	public List<User> findAllUsers() {
-		return userRepo.findAllByOrderByNameAsc();
+		return userRepo.findAllByOrderBySurnameAsc();
 	}
 	
 	@GetMapping("/addEmployee")
@@ -73,9 +74,38 @@ public class UserController {
 		return "redirect:addNextEmployee";		
 	}
 	
-	@GetMapping("listOfEmployees")
+	@GetMapping("/listOfEmployees")
 	public String showListOfEmployees() {
 		return "UserView/listOfUsers";
 	}
+
+	@GetMapping("/editEmployee/{id}")
+	public String editUser(@PathVariable long id, Model model) {
+		model.addAttribute("user", userRepo.findById(id));
+		return "UserView/editUser";
+	}
+	
+	@PostMapping("/editEmployee/{id}")
+	public String edition(@Valid User user, @PathVariable long id, BindingResult result) {
+		if(result.hasErrors()) {
+			return "UserView/editUser";
+		}
+		User user2 = userRepo.findById(id);
+		user2.setName(user.getName());
+		user2.setSurname(user.getSurname());
+		user2.setPosition(user.getPosition());
+		user2.setEmail(user.getEmail());
+		userRepo.save(user2);
+		return "redirect:listOfEmployees";		
+	}
+	
+	@GetMapping("/deleteEmployee/{id}")
+	public String deleteUser(@PathVariable long id) {
+		userRepo.deleteById(id);
+		return "redirect:/companyabc/listOfEmployees";	
+		
+	}
+	
+
 
 }

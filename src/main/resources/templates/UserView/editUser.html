@@ -12,7 +12,7 @@
 	</nav>
 
 	<div class="leftmenu">
-		<a class="menubuttons" th:href="@{/companyabc/addEmployee}">Dodaj
+		<a class="menubuttons" th:href="@{/editEmployee/{id}(id=*{id})}">Dodaj
 			nowego pracownika</a> <a class="menubuttons"
 			th:href="@{/companyabc/employees}">Wyszukaj pracownika</a> <a
 			class="menubuttons" th:href="@{/companyabc/positions}">Pokaż
@@ -22,11 +22,10 @@
 	<div class="cointeiner">
 
 		<div class="formAdd">
-			
-			<div class="formTittle">Pomyślnie dodano pracownika<br>Dodaj następnego nowego pracownika</div>
-			
-			<form method="post" th:action="@{addNextEmployee}" th:object="${user}">
+			<div class="formTittle">Edycja pracownika</div>
+			<form method="post" th:action="@{/editEmployee/{id}(id=${user.id})}" th:object="${user}">
 				<div class="form">
+				<input type="hidden" th:field="*{id}" />
 					<label class="formLabel">Imię</label><input type="text" th:field="*{name}"
 						class="formInput" /><span class ="formErrors" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 				</div>
@@ -47,7 +46,7 @@
 				</div>
 				<div class="form">
 				<input class="formButton" id="send" type="submit"
-					value="Dodaj pracownika"></input>
+					value="Edytuj pracownika"></input>
 					</div>
 			</form>
 		</div>

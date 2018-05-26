@@ -23,6 +23,8 @@ public class User {
 	private Position position;
 	@NotEmpty(message="Proszę uzupełnienie pola")
 	private String email;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -50,6 +52,12 @@ public class User {
 	public long getId() {
 		return id;
 	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	
 	
 	
 	

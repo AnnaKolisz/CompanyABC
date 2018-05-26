@@ -8,6 +8,8 @@ import com.companyabc.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 	
-	 List<User> findAllByOrderByNameAsc();
+	 List<User> findAllByOrderBySurnameAsc();
+	 
+	 User findById(long Id);
 
 }
