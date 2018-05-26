@@ -22,18 +22,32 @@
 	<div class="cointeiner">
 
 		<div class="formAdd">
-			<span> Dodaj nowego użytkownika</span>
+			<div class="formTittle">Dodaj nowego użytkownika</div>
+
 			<form method="post" th:action="@{addUser}" th:object="${user}">
-				<label>Imię<input type="text" name="name" /></label> <label>Nazwisko<input
-					type="text" name="surname" /></label> 
-					<label> Stanowisko
-					<select th:field="*{position}">
-					<option
-						th:each="position : ${positions}" 
-						th:value="${position.id}"
-						th:text="${position.name}"></option></select></label>
-					<label>Email<input type="email" name="email"/></label>	
-					<input id="send" type="submit" value="Dodaj pracownika"></input>
+				<div class="form">
+					<label class="formLabel">Imię</label><input type="text" name="name"
+						class="formInput" />
+				</div>
+				<div class="form">
+					<label class="formLabel">Nazwisko</label><input type="text"
+						name="surname" class="formInput" />
+				</div>
+				<div class="form">
+					<label class="formLabel"> Stanowisko</label> <select
+						class="formSelect" th:field="*{position}">
+						<option th:each="position : ${positions}"
+							th:value="${position.id}" th:text="${position.name}"></option>
+					</select>
+				</div>
+				<div class="form">
+					<label class="formLabel">Email</label><input type="email"
+						name="email" class="formInput" />
+				</div>
+				<div class="form">
+				<input class="formButton" id="send" type="submit"
+					value="Dodaj pracownika"></input>
+					</div>
 			</form>
 		</div>
 	</div>

@@ -2,11 +2,65 @@
 
 body{
 	margin: 1px;
+	font-family: Helvetica, sans-serif;
 }
 
 .cointeiner{
 	position:relative;
 	left:350px;
+	margin-left:25px;
+}
+
+.form{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.formAdd{
+	color: #696969;	
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+.formButton{
+	background-color: #75D1BC;
+	color: #FEEFC6;
+	margin-left: 175px;
+	font-size: 24px;
+	width: 300px;
+	
+	padding: 5px;
+	border: 1px solid #75D1BC;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 12px;
+}
+
+.formInput{
+	margin-left:20px;
+	width: 600px;
+	height:30px;
+}
+
+.formLabel{
+	display:inline-block;
+	padding: 20px;
+	font-size: 24px;
+	width: 100px;
+	margin: 5px;
+}
+
+.formSelect{
+	width: 605px;
+	margin-left:20px;
+	font-size: 20px;
+	padding: 5px;
+	text-align: center;
+}
+
+.formTittle{
+	font-size: 28px;
+	margin-bottom:20px;
+	margin-left: 175px;
 }
 
 .leftmenu{
@@ -14,7 +68,6 @@ body{
 	width: 350px;
 	background-color: #75D1BC;
 	height:1000px;	
-	
 }
 
 #logo{
@@ -37,7 +90,7 @@ body{
 	width:275px;
 	text-align: center;
 	text-decoration: none;
-	font-family: Helvetica, sans-serif;
+	
 }
 
 nav{
@@ -45,19 +98,17 @@ nav{
 	color: #FEEFC6;
 	background-color: #37A48B;
 	padding: 15px; 
-	font-size: 28px;
-	font-family: Helvetica, sans-serif;
+	font-size: 30px;
 	font-weight: bold;
 	height: 36px;
 }
+
 
 #welcome{
 	position: relative;
 	top: 100px;
 	left:500px;
-	
 	color: #37A48B;
-	
 	font-size: 48px;
 }
 
