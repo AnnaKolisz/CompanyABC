@@ -20,6 +20,9 @@ public class Position {
 	@OneToMany
 	private List<User> users;
 	
+	public List<User> getUsers() {
+		return users;
+	}
 	public int getId() {
 		return id;
 	}

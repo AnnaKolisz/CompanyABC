@@ -15,6 +15,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 
 	 User findById(long Id);
 	 
-	 public long countByPosition(Position postion);
+	 @Query(
+			  value = "SELECT * FROM User GROUP BY position_id", 
+			  countQuery = "SELECT count(*) FROM User", 
+			  nativeQuery = true)
+			List<User> findAllUsersWithPosition(int id);
 
 }

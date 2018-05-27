@@ -13,12 +13,15 @@
 
 
 	<div class="cointeiner">
-		<span id="welcome">LOGOWANIE </span>
+		
+		<div class="formAdd">
+		<div class="formTittle">LOGOWANIE </div>
 		<form th:action="@{/login}" method="post">
-            <div><label> Username : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
+            <div><label class="formLabel"> Username: </label><input type="text" name="username" class="formInput"/> </div>
+            <div><label class="formLabel"> Password: </label><input type="password" name="password" class="formInput"/> </div>
+            <div><input type="submit" value="Sign In" class="formButton"/></div>
         </form>
+        </div>
 	</div>
 
 </body>

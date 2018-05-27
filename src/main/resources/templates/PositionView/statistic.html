@@ -20,21 +20,28 @@
 			th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
 	</div>
 	<div class="cointeiner">
-		<div>Liczba stanowisk</div>
-		<span th:text="${numberOfPosition}"></span>
+		<br>
 		<div class="formAdd">
-		<table>
-			<thead></thead>
-			<tbody>
+		<div  class="formTittle" th:text="'Liczba wszystkich pracowników: ' + ${numberOfUsers}"></div>
+		<br>
+			<table>
+				<thead>
 				<tr>
-					<td th:text="${numbers}"></td>
+				<th>Nazwa stanowiska</th>
+				<th>Liczba pracowników</th>
+				<tr>
+				</thead>
+				<tbody >
+					 <tr th:each="cu:${Users}">
+						<td th:text="${cu.key}"></td>
+						<td th:text="${cu.value}"></td>
+					</tr>
+				</tbody>
 
-				</tr>
-			</tbody>
+			</table> 
+			
+		</div>
+	</div>
 
-		</table>
-	</div>
-	</div>
-	
 </body>
 </html>
