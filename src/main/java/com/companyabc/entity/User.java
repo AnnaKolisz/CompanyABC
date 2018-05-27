@@ -1,11 +1,11 @@
 package com.companyabc.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 
@@ -21,6 +21,7 @@ public class User {
 	private String surname;
 	@ManyToOne
 	private Position position;
+	@Column(unique=true)
 	@NotEmpty(message="Proszę uzupełnienie pola")
 	private String email;
 	

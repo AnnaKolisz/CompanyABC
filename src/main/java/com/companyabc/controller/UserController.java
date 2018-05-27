@@ -86,17 +86,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/editEmployee/{id}")
-	public String edition(@Valid User user, @PathVariable long id, BindingResult result) {
+	public String edition(@Valid User user, BindingResult result) {
 		if(result.hasErrors()) {
 			return "UserView/editUser";
 		}
-		User user2 = userRepo.findById(id);
-		user2.setName(user.getName());
-		user2.setSurname(user.getSurname());
-		user2.setPosition(user.getPosition());
-		user2.setEmail(user.getEmail());
-		userRepo.save(user2);
-		return "redirect:listOfEmployees";		
+		userRepo.save(user);
+		return "redirect:/companyabc/listOfEmployees";		
 	}
 	
 	@GetMapping("/deleteEmployee/{id}")

@@ -14,32 +14,31 @@
 	<div class="leftmenu">
 		<a class="menubuttons" th:href="@{/companyabc/addEmployee}">Dodaj
 			nowego pracownika</a> <a class="menubuttons"
-			th:href="@{/companyabc/employees}">Wyszukaj pracownika</a> <a
-			class="menubuttons" th:href="@{/companyabc/positions}">Statystyki
-			stanowisk</a> <a class="menubuttons"
-			th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
+			th:href="@{/companyabc/positions}">Statystyki stanowisk</a> <a
+			class="menubuttons" th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
 	</div>
 	<div class="cointeiner">
 		<br>
 		<div class="formAdd">
-		<div  class="formTittle" th:text="'Liczba wszystkich pracowników: ' + ${numberOfUsers}"></div>
-		<br>
+			<div class="formTittle"
+				th:text="'Liczba wszystkich pracowników: ' + ${numberOfUsers}"></div>
+			<br>
 			<table>
 				<thead>
-				<tr>
-				<th>Nazwa stanowiska</th>
-				<th>Liczba pracowników</th>
-				<tr>
+					<tr>
+						<th>Nazwa stanowiska</th>
+						<th>Liczba pracowników</th>
+					<tr>
 				</thead>
-				<tbody >
-					 <tr th:each="cu:${Users}">
+				<tbody>
+					<tr th:each="cu:${Users}">
 						<td th:text="${cu.key}"></td>
 						<td th:text="${cu.value}"></td>
 					</tr>
 				</tbody>
 
-			</table> 
-			
+			</table>
+
 		</div>
 	</div>
 

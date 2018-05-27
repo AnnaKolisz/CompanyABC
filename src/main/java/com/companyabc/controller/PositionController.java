@@ -1,5 +1,6 @@
 package com.companyabc.controller;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class PositionController {
 		model.addAttribute("numberOfUsers", userRepo.count());
 		HashMap<String, Long> countUsers = new HashMap<String, Long>();
 		List<Position> positions = positionRepo.findAllByOrderByIdAsc();
+		
 		for (Position position : positions) {
 			countUsers.put(position.getName(), positionRepo.countUsersGroupByPosition(position.getId()));			
 		}
