@@ -157,6 +157,23 @@ table {
 
 }
 
+.task{
+	color: #696969;
+	margin: 30px;
+	display: block;
+	border: 1px solid #FEEFC6;
+	border-radius: 30px;
+	background-color: #fff8e6;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 20px;
+	width: 400px;
+	text-align: center;
+	text-decoration: none;
+}
+
 thead, tbody { display: block; }
 
 #myTable{

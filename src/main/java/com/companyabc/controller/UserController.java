@@ -54,6 +54,12 @@ public class UserController {
 		if(result.hasErrors()) {
 			return "UserView/addUser";
 		}
+		List<User> employees = userRepo.findAll();
+		for (User employee : employees) {
+			if(employee.getEmail().equals(user.getEmail())) {
+				return "UserView/wrongEmail";
+			}
+		}
 		userRepo.save(user);
 		return "redirect:addNextEmployee";		
 	}
@@ -61,7 +67,7 @@ public class UserController {
 	@GetMapping("/addNextEmployee")
 	public String addNewnextUser(Model model) {
 		model.addAttribute("user", new User());
-		return "UserView/addUser";
+		return "UserView/addNextUser";
 		
 	}
 	
@@ -69,6 +75,12 @@ public class UserController {
 	public String addnextUser(@Valid @ModelAttribute("user")User user, BindingResult result) {
 		if(result.hasErrors()) {
 			return "UserView/addNextUser";
+		}
+		List<User> employees = userRepo.findAll();
+		for (User employee : employees) {
+			if(employee.getEmail().equals(user.getEmail())) {
+				return "UserView/wrongEmail";
+			}
 		}
 		userRepo.save(user);
 		return "redirect:addNextEmployee";		
