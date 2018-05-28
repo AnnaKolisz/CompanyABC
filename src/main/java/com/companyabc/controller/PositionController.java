@@ -1,8 +1,11 @@
 package com.companyabc.controller;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import java.util.Set;
+import java.util.TreeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,15 +28,17 @@ public class PositionController {
 	@GetMapping("/positions")
 	public String showStatistic(Model model) {
 		model.addAttribute("numberOfUsers", userRepo.count());
-		HashMap<String, Long> countUsers = new HashMap<String, Long>();
-		List<Position> positions = positionRepo.findAllByOrderByIdAsc();
-		
+		Map<String, String> countUsers = new HashMap<String, String>();
+		List<Position> positions = positionRepo.findAll();
 		for (Position position : positions) {
-			countUsers.put(position.getName(), positionRepo.countUsersGroupByPosition(position.getId()));			
+			countUsers.put(position.getName(), positionRepo.countUsersGroupByPosition(position.getId()).toString());
 		}
-		model.addAttribute("Users", countUsers);
+		Map<String, String> listOfPositions = new TreeMap<String, String>(countUsers);
+		model.addAttribute("Users", listOfPositions);
 		return "PositionView/statistic";
 		
 	}
+	
+
 
 }

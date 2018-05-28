@@ -8,7 +8,7 @@
 <body>
 
 	<nav>
-		A B C<span id="logo">ompany</span>
+		A B C<em>ompany</em>
 	</nav>
 
 	<div class="leftmenu">
@@ -26,14 +26,14 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Nazwa stanowiska</th>
-						<th>Liczba pracowników</th>
+						<th class="specialSize">Nazwa stanowiska</th>
+						<th class="specialSize">Liczba pracowników</th>
 					<tr>
 				</thead>
 				<tbody>
 					<tr th:each="cu:${Users}">
-						<td th:text="${cu.key}"></td>
-						<td th:text="${cu.value}"></td>
+						<td th:text="${cu.key}" class="specialSize"></td>
+						<td th:text="${cu.value}" id="tdExcept" class="specialSize"></td>
 					</tr>
 				</tbody>
 

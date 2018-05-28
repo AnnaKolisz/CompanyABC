@@ -10,8 +10,8 @@
 </head>
 <body>
 
-	<nav id="navigator">
-		A B C<span id="logo">ompany</span>
+	<nav>
+		A B C<em>ompany</em>
 	</nav>
 
 	<div class="leftmenu">
@@ -38,14 +38,14 @@
 						<th></th>
 					</tr>
 				</thead>
-				<tbody id="myTable">
+				<tbody id="myTable" >
 					<tr th:each="employee : ${employees}">
 						<td th:text="${employee.surname}"></td>
 						<td th:text="${employee.name}"></td>
 						<td th:text="${employee.position.name}"></td>
 						<td th:text="${employee.email}"></td>
-						<td><a th:href="@{editEmployee/{id}(id=${employee.id})}">Edytuj</a></td>
-						<td><a th:href="@{deleteEmployee/{id}(id=${employee.id})}"
+						<td><a class="buttomEdit" th:href="@{editEmployee/{id}(id=${employee.id})}">Edytuj</a></td>
+						<td><a class="buttomDelete" th:href="@{deleteEmployee/{id}(id=${employee.id})}"
 							onclick="return confirm('Proszę o potwierdzenie usunięcia pracownika. Akcja nieodwracalna');">Usuń</a></td>
 
 					</tr>

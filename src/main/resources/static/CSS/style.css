@@ -1,7 +1,30 @@
 @charset "UTF-8";
 
+.buttomEdit {
+	color: #75D1BC;
+	padding: 5px;
+	border: 1px solid #75D1BC;
+	border-radius: 15px;
+	margin: 3px;
+	text-decoration: none;
+	margin-left:60px;
+	
+	
+}
+
+.buttomDelete {
+	color: Tomato;
+	padding: 5px;
+	border: 1px solid Tomato;
+	border-radius: 15px;
+	margin: 3px;
+	text-align: center;
+	text-decoration: none;
+	margin-left:40px;
+}
+
 body {
-	padding: 0; 
+	padding: 0;
 	font-family: Helvetica, sans-serif;
 	margin: 0 auto;
 }
@@ -10,6 +33,11 @@ body {
 	position: relative;
 	left: 350px;
 	margin-left: 25px;
+	max-width: 1750px;
+}
+
+em {
+	color: Tomato;
 }
 
 .form {
@@ -31,8 +59,7 @@ body {
 	width: 300px;
 	padding: 5px;
 	border: 1px solid #75D1BC;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 12px;
+	border-radius: 20px;
 }
 
 .formErrors {
@@ -45,7 +72,12 @@ body {
 .formInput {
 	margin-left: 20px;
 	width: 600px;
-	height: 30px;
+	height: 35px;
+	padding-left: 5px;
+	font-size: 20px;
+	background-color: #ecf9f6;
+	border-color: #ecf9f6;
+	border-radius: 10px;
 }
 
 .formLabel {
@@ -67,14 +99,13 @@ body {
 	text-align: center;
 }
 
-.formSearch{
+.formSearch {
 	margin-left: 20px;
 	width: 600px;
 	height: 30px;
 	margin-bottom: 35px;
 	font-size: 20px;
-	padding:5px;
-	
+	padding: 5px;
 }
 
 .formTittle {
@@ -90,18 +121,13 @@ body {
 	height: 100%;
 }
 
-#logo {
-	color: Tomato;
-}
-
 .menubuttons {
 	color: #696969;
 	margin: 30px;
 	display: block;
 	position: relative;
 	border: 1px solid #FEEFC6;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 12px;
+	border-radius: 30px;
 	background-color: #fff8e6;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -121,30 +147,45 @@ nav {
 	font-size: 30px;
 	font-weight: bold;
 	height: 36px;
+	width: 100%;
 }
 
 table {
 	margin-left: 25px;
 	border-collapse: collapse;
-	
+	width: 100%:
+
+}
+
+thead, tbody { display: block; }
+
+#myTable{
+	height: 600px;
+	overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden; 
 }
 
 td, th {
-	font-size: 24px;
+	font-size: 16px;
 	border-bottom: 1px solid #75D1BC;
 	padding: 8px;
-	margin-left:10px;
-	margin-right:10px;
 	text-align: left;
+	vertical-align: middle;
+	height: 30px;
+	width: 150px;
+}
+
+#tdExcept {
+	text-align: center;
 }
 
 th {
 	color: #37A48B;
-	font-size: 28px;
+	font-size: 20px;
 }
 
-.text{
-	font-size:20px;
+.text {
+	font-size: 20px;
 	font-style: italic;
 	margin-left: 15px;
 	margin-bottom: 5px;
@@ -154,10 +195,13 @@ tr:hover {
 	background-color: #f5f5f5;
 }
 
-
-
 tr {
 	border-bottom: 1px solid #75D1BC;
+	width: 100%;
+}
+
+.specialSize{
+	width: 200px;
 }
 
 #welcome {
