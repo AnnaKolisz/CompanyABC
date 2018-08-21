@@ -6,7 +6,13 @@
 //    });
 //  });
 //});
+
 window.onload = function(){
-document.getElementById('officeImage').style.backgroundImage = "url('../images/office.jpg')"; 
-//document.getElementById('officeImage').style.backgroundImage = "url('https://www.w3schools.com/w3css/img_lights.jpg')"; 
+//document.getElementById('officeImage').style.backgroundImage = "url('../images/office.jpg')"; 
+	callOfficeLogin() ;
 };
+
+
+function callOfficeLogin() {
+    document.getElementById('cointeinerImage').style.backgroundImage = "url('../images/officeLogin.jpg')"; 
+}

@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}"></link>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}">
+<script th:src="@{/js/app.js}" type="text/javascript"></script>
 <title>CompanyABC | Login</title>
 </head>
 <body>
@@ -12,14 +13,14 @@
 	</nav>
 
 
-	<div class="cointeiner">
+	<div id="cointeinerImage">
 		
 		<div class="formAdd">
-		<div class="formTittle">LOGOWANIE </div>
+		
 		<form th:action="@{/login}" method="post">
-            <div><label class="formLabel"> Username: </label><input type="text" name="username" class="formInput"/> </div>
-            <div><label class="formLabel"> Password: </label><input type="password" name="password" class="formInput"/> </div>
-            <div><input type="submit" value="Sign In" class="formButton"/></div>
+            <div><input type="text" name="username" class="formInput" placeholder="Please enter username..."/> </div>
+            <div></label><input type="password" name="password" class="formInput" placeholder="and password"/> </div>
+            <div><input type="submit" value="Log In" class="formButton"/></div>
         </form>
         </div>
 	</div>
