@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	PositionRepository positionRepo;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public String startApp() {
 		return "start";
 	}

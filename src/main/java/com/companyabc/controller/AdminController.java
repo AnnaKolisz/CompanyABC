@@ -11,5 +11,10 @@ public class AdminController {
 	public String getLoginPage() {
 		return "login";
 	}
+	
+	@GetMapping("")
+	public String navigate() {
+		return "redirect:/companyabc";
+	}
 
 }
