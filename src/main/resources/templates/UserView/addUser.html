@@ -8,7 +8,7 @@
 <body>
 
 	<nav>
-		A B C<em>ompany</em>
+		<a class="logoLink" th:href="@{/companyabc}" >A B C<em>ompany</em></a>
 	</nav>
 
 	<div class="leftmenu">
@@ -20,7 +20,7 @@
 	<div class="cointeiner">
 
 		<div class="formAdd">
-			<div class="formTittle">Dodaj nowego pracownika</div>
+			
 			<form method="post" th:action="@{addEmployee}" th:object="${user}">
 				<div class="form">
 					<label class="formLabel">Imię</label><input type="text"

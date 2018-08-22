@@ -8,11 +8,15 @@
 //});
 
 window.onload = function(){
-//document.getElementById('officeImage').style.backgroundImage = "url('../images/office.jpg')"; 
-	callOfficeLogin() ;
+
+
 };
 
 
 function callOfficeLogin() {
     document.getElementById('cointeinerImage').style.backgroundImage = "url('../images/officeLogin.jpg')"; 
+}
+
+function callOfficeImage(){
+	document.getElementById('officeImage').style.backgroundImage = "url('../images/office.jpg')"; 
 }
