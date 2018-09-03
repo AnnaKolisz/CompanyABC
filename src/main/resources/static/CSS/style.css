@@ -3,8 +3,6 @@
 .buttomEdit {
 	color: #75D1BC;
 	padding: 5px;
-	border: 1px solid #75D1BC;
-	border-radius: 15px;
 	margin: 3px;
 	text-decoration: none;
 	margin-left:60px;
@@ -15,8 +13,6 @@
 .buttomDelete {
 	color: Tomato;
 	padding: 5px;
-	border: 1px solid Tomato;
-	border-radius: 15px;
 	margin: 3px;
 	text-align: center;
 	text-decoration: none;
@@ -212,13 +208,13 @@ thead, tbody { display: block; }
 }
 
 td, th {
-	font-size: 16px;
-	border-bottom: 1px solid #75D1BC;
+	font-size: 20px;
+	border-bottom: 1px solid #ff9933;
 	padding: 8px;
 	text-align: left;
 	vertical-align: middle;
-	height: 30px;
-	width: 150px;
+	height: 50px;
+	width: 180px;
 }
 
 #tdExcept {
@@ -226,8 +222,8 @@ td, th {
 }
 
 th {
-	color: #37A48B;
-	font-size: 20px;
+	color: grey;
+	font-size: 24px;
 }
 
 .text {
@@ -247,5 +243,5 @@ tr {
 }
 
 .specialSize{
-	width: 200px;
+	width: 250px;
 }
