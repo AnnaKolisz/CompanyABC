@@ -8,7 +8,7 @@
 <body>
 
 	<nav>
-		A B C<em>ompany</em>
+		<a class="logoLink" th:href="@{/companyabc}">A B C<em>ompany</em></a>
 	</nav>
 
 	<div class="leftmenu">
@@ -20,20 +20,29 @@
 	<div class="cointeiner">
 		<br>
 		<div class="formAdd">
-			<div class="formTittle"
-				th:text="'Liczba wszystkich pracowników: ' + ${numberOfUsers}"></div>
+			<!-- <div class="formTittle"
+				th:text="'Liczba wszystkich pracowników: ' + ></div> -->
 			<br>
 			<table>
 				<thead>
 					<tr>
+						<th></th>
 						<th class="specialSize">Nazwa stanowiska</th>
 						<th class="specialSize">Liczba pracowników</th>
 					<tr>
 				</thead>
 				<tbody>
-					<tr th:each="cu:${Users}">
-						<td th:text="${cu.key}" class="specialSize"></td>
-						<td th:text="${cu.value}" id="tdExcept" class="specialSize"></td>
+					<tr th:each="user, iterator:${Users}">
+						<td th:text="${iterator.index+1}" />
+						<td th:text="${user.key}" class="specialSize"></td>
+						<td th:text="${user.value}" id="tdExcept" class="specialSize"></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="specialSize" />
+						<td id="tdExcept" >
+						<!--  <b th:text="${#aggregates.sum(Users.![value])}"></b> -->
+						<b th:text="${numberOfUsers}"></b>
+						</td>
 					</tr>
 				</tbody>
 
