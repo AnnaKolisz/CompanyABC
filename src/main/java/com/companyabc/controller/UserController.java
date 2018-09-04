@@ -61,30 +61,10 @@ public class UserController {
 			}
 		}
 		userRepo.save(user);
-		return "redirect:addNextEmployee";		
+		//return "redirect:addNextEmployee";
+		return "redirect:addEmployee";
 	}
-	
-	@GetMapping("/addNextEmployee")
-	public String addNewnextUser(Model model) {
-		model.addAttribute("user", new User());
-		return "UserView/addNextUser";
-		
-	}
-	
-	@PostMapping("/addNextEmployee")
-	public String addnextUser(@Valid @ModelAttribute("user")User user, BindingResult result) {
-		if(result.hasErrors()) {
-			return "UserView/addNextUser";
-		}
-		List<User> employees = userRepo.findAll();
-		for (User employee : employees) {
-			if(employee.getEmail().equals(user.getEmail())) {
-				return "UserView/wrongEmail";
-			}
-		}
-		userRepo.save(user);
-		return "redirect:addNextEmployee";		
-	}
+
 	
 	@GetMapping("/listOfEmployees")
 	public String showListOfEmployees() {

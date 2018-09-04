@@ -2,8 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}"></link>
-
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}">
+<script th:src="@{/js/app.js}" type="text/javascript"></script>
 <title>CompanyABC</title>
 </head>
 <body>
@@ -19,8 +19,6 @@
 			class="menubuttons" th:href="@{/companyabc/listOfEmployees}">Pracownicy</a>
 	</div>
 	<div id="officeImage"></div>
-	<script>
-document.getElementById('officeImage').style.backgroundImage = "url('../images/office.jpg')"; 
-</script>
+
 </body>
 </html>
